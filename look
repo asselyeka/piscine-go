@@ -1,1 +1,1 @@
-find . -type f -name "a*" && find . -type f -name "*z" && find . -type f -name "z*a!"
+find . \( -name "a*" -o -name "*z" -o -name "z*a!" \) -print
