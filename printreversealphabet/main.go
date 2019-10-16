@@ -1,13 +1,13 @@
 package main
 
-import "github.com/01-edu/z01"
+import "fmt"
 
 func main() {
 
-	i := 0
-	for i < 26 {
-		z01.PrintRune(rune(122 - i))
-		i++
+	var i = 'z'
+	for i >= 'a' {
+		fmt.Print(string(i))
+		i--
 	}
-	z01.PrintRune('\n')
+	fmt.Println()
 }
