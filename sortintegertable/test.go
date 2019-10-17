@@ -8,23 +8,19 @@ import (
 
 func main() {
 	s := []int{12, 10, 7, 6, 5, 4, 3, 2, 1, 0}
-	a := []int{-81, -13, 25, -67}
-	b := []int{42, 82, -62, -19}
-	c := []int{68, 65, -50, -38}
-	d := []int{89, 28, 31, -81}
+	a := []int{5, -18, 23, -96}
+	b := []int{57, -71, -89, -86}
+	c := []int{-93, -99, 93, 74}
 	piscine.SortIntegerTable(s)
 	piscine.SortIntegerTable(a)
 	piscine.SortIntegerTable(b)
 	piscine.SortIntegerTable(c)
-	piscine.SortIntegerTable(d)
 	fmt.Println(s)
 	fmt.Println(a)
 	fmt.Println(b)
 	fmt.Println(c)
-	fmt.Println(d)
 }
 
-//	sortintegertable_test.go:27: SortIntegerTable([-81 -13 25 -67]), table == [-81 -13 25 -67] instead of [-81 -67 -13 25]
-//    sortintegertable_test.go:27: SortIntegerTable([42 82 -62 -19]), table == [-62 42 82 -19] instead of [-62 -19 42 82]
-//    sortintegertable_test.go:27: SortIntegerTable([68 65 -50 -38]), table == [-50 65 68 -38] instead of [-50 -38 65 68]
-//    sortintegertable_test.go:27: SortIntegerTable([89 28 31 -81]), table == [28 31 89 -81] instead of [-81 28 31 89]
+// sortintegertable_test.go:27: SortIntegerTable([5 -18 23 -96]), table == [-18 5 23 -96] instead of [-96 -18 5 23]
+// sortintegertable_test.go:27: SortIntegerTable([57 -71 -89 -86]), table == [-89 -71 57 -86] instead of [-89 -86 -71 57]
+// sortintegertable_test.go:27: SortIntegerTable([-93 -99 93 74]), table == [-99 -93 93 74] instead of [-99 -93 74 93]
