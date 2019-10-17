@@ -10,7 +10,7 @@ func StrRev(s string) string {
 		count = index + a
 	}
 	str := s
-	revstr := []byte(str)
+	revstr := []byte(s)
 	j := 0
 	for i := count; i >= 0; i-- {
 		revstr[i] = byte(s[j])
