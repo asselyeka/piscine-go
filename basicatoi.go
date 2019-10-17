@@ -1,7 +1,5 @@
 package piscine
 
-import "math"
-
 func ByteToInt(num byte) int {
 	var runenum int
 	switch num {
@@ -48,7 +46,7 @@ func BasicAtoi(s string) int {
 	for i := 0; i < lenth; i++ {
 		if str[i] > 48 && str[i] < 58 {
 			for j := i; j < lenth; j++ {
-				num += ByteToInt(s[j]) * int(math.Pow10(lenth-j-1))
+				num = num*10 + ByteToInt(s[j])
 			}
 			break
 		}
