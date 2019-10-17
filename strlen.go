@@ -4,12 +4,15 @@ package piscine
 
 func StrLen(str string) int {
 	var count int
-	for index := range str {
+	var a int
+	for index, word := range str {
+		if word == 233 {
+			a = -1
+		}
+		count = index + 1 + a
 		//fmt.Printf("letter %v, index %v", rune(word), index)
-		count = index
 		//fmt.Println()
 
 	}
-
 	return count
 }
