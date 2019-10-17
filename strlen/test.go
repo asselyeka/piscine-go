@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	str := "Hello World!"
+	str := "Héllo!"
 	nb := piscine.StrLen(str)
 	fmt.Println(nb)
 }
