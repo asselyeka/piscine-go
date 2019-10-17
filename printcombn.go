@@ -1,37 +1,81 @@
-package piscine
+package printcombn
 
-import (
-	"fmt"
-	"strconv"
-)
+import "github.com/01-edu/z01"
 
-func printi(b int, n int, a int, i int, l string) {
-	a++
-	for j := b + 1; j < 10-n+a; j++ {
-		if a < n {
-			printi(j, n, a, i, l+strconv.Itoa(j))
-		} else {
-			fmt.Print(l)
-			fmt.Print(j)
-			if i < 10-n {
-				fmt.Print(", ")
-			} else {
-				fmt.Print("\n")
-			}
+func GIVE(y int) {
+	w := '0'
+	if y == 0 {
+		z01.PrintRune(w)
+		return
+	}
+	for j := 1; j <= y%10; j++ {
+		w++
+	}
+	for j := -1; j >= y%10; j-- {
+		w++
+	}
+	if y/10 != 0 {
+		GIVE(y / 10)
+	}
+	z01.PrintRune(w)
+	return
+}
+
+func check(p int) bool {
+	for {
+		if p == 0 {
+			break
 		}
+		if p/10 != 0 && p%10 <= ((p/10)%10) {
+			return false
+		}
+		p /= 10
+	}
+	return true
+}
+func ok(p int) bool {
+	if p < 9 {
+		return true
+	}
+	if p%10 == 9 {
+		for {
+			if p == 0 {
+				break
+			}
+			if p/10 != 0 && p%10 != ((p/10)%10)+1 {
+				return true
+			}
+			p /= 10
+		}
+
+		return false
+	} else {
+		return true
 	}
 }
 func PrintCombN(n int) {
-	for i := 0; i < 10; i++ {
-		if n > 1 {
-			printi(i, n, 1, i, strconv.Itoa(i))
-		} else {
-			fmt.Print(i)
-			if i < 10-n {
-				fmt.Print(", ")
-			} else {
-				fmt.Print("\n")
+	mx_ln := 1
+	for i := 2; i <= n; i++ {
+		mx_ln *= 10
+	}
+	for i := mx_ln / 10; i < mx_ln; i++ {
+		if check(i) == true {
+			if mx_ln >= 10 {
+				z01.PrintRune('0')
+			}
+			GIVE(i)
+			z01.PrintRune(',')
+			z01.PrintRune(' ')
+		}
+	}
+	for i := mx_ln; i <= mx_ln*9; i++ {
+		if check(i) == true {
+			GIVE(i)
+			if ok(i) == true {
+				z01.PrintRune(',')
+				z01.PrintRune(' ')
 			}
 		}
 	}
+	z01.PrintRune('\n')
 }
