@@ -42,5 +42,4 @@ func SortIntegerTable(table []int) {
 			}
 		}
 	}
-
 }
