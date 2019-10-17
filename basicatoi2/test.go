@@ -9,7 +9,7 @@ import (
 func main() {
 	s := "12345"
 	s2 := "0000000012345"
-	s3 := "012 345"
+	s3 := "Invalid123"
 	s4 := "1Invalid2"
 
 	n := piscine.BasicAtoi2(s)
