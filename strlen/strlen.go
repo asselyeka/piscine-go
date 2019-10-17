@@ -10,9 +10,6 @@ func StrLen(str string) int {
 			a = -1
 		}
 		count = index + 1 + a
-		//fmt.Printf("letter %v, index %v", rune(word), index)
-		//fmt.Println()
-
 	}
 	return count
 }
