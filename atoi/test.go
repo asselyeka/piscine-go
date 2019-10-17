@@ -14,7 +14,7 @@ func main() {
 	s5 := "+1234"
 	s6 := "-1234"
 	s7 := "++1234"
-	s8 := "--1234"
+	s8 := "-"
 
 	n := piscine.Atoi(s)
 	n2 := piscine.Atoi(s2)

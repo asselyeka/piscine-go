@@ -39,11 +39,11 @@ func StrLen(str string) int {
 	return count
 }
 
-func BasicAtoi2(s string, index int) int {
+func BasicAtoi2(s string, ind int) int {
 	lenth := StrLen(s)
 	var num int = 0
 	str := []byte(s)
-	for i := index; i < lenth; i++ {
+	for i := ind; i < lenth; i++ {
 		if str[i] > 47 && str[i] < 58 {
 			for j := i; j < lenth; j++ {
 				if str[j] > 47 && str[j] < 58 {
@@ -64,12 +64,18 @@ func BasicAtoi2(s string, index int) int {
 func Atoi(s string) int {
 	str := []byte(s)
 	var num int
-	if str[0] == 43 {
-		num = BasicAtoi2(s, 1)
-	} else if str[0] == 45 {
-		num = (-1) * BasicAtoi2(s, 1)
+	if StrLen(s) >= 2 {
+
+		if str[0] == 43 {
+			num = BasicAtoi2(s, 1)
+		} else if str[0] == 45 {
+			num = (-1) * BasicAtoi2(s, 1)
+		} else {
+			num = BasicAtoi2(s, 0)
+		}
 	} else {
 		num = BasicAtoi2(s, 0)
 	}
+
 	return num
 }
