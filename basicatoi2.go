@@ -44,7 +44,7 @@ func BasicAtoi2(s string) int {
 	var num int = 0
 	str := []byte(s)
 	for i := 0; i < lenth; i++ {
-		if str[i] > 48 && str[i] < 58 {
+		if str[i] > 47 && str[i] < 58 {
 			for j := i; j < lenth; j++ {
 				if str[j] > 47 && str[j] < 58 {
 					num = num*10 + ByteToInt(s[j])
@@ -53,7 +53,10 @@ func BasicAtoi2(s string) int {
 				}
 			}
 			break
+		} else {
+			break
 		}
+
 	}
 	return num
 }
