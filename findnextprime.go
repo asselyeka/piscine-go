@@ -13,8 +13,11 @@ func IsPrime1(nb int) bool {
 }
 
 func FindNextPrime(nb int) int {
+	if nb < 2 {
+		nb = 2
+	}
 	result := nb
-	for i := nb; i < nb+50; i++ {
+	for i := result; i < result+50; i++ {
 		if IsPrime1(i) {
 			result = i
 			break
