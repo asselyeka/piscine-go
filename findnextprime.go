@@ -13,15 +13,18 @@ func IsPrime1(nb int) bool {
 }
 
 func FindNextPrime(nb int) int {
-	if nb < 2 {
-		nb = 2
-	}
-	result := nb
-	for i := result; i < result+10; i++ {
-		if IsPrime1(i) {
-			result = i
-			break
+	if nb < 20000 {
+		if nb < 2 {
+			nb = 2
 		}
+		result := nb
+		for i := result; i < result+10; i++ {
+			if IsPrime1(i) {
+				result = i
+				break
+			}
+		}
+		return result
 	}
-	return result
+	return 0
 }
