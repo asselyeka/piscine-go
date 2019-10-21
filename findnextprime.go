@@ -13,7 +13,7 @@ func IsPrime1(nb int) bool {
 }
 
 func FindNextPrime(nb int) int {
-	if nb < 9000000000 {
+	if nb < 1000000000 {
 		if nb < 2 {
 			nb = 2
 		}
