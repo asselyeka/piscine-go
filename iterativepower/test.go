@@ -1,10 +1,10 @@
 package main
 
 import (
-        "fmt"
-        piscine ".."
-)
+	"fmt"
 
+	piscine ".."
+)
 
 func main() {
 	arg1 := 4
