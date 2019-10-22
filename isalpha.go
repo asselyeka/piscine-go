@@ -8,7 +8,7 @@ func IsAlpha(str string) bool {
 			counter++
 		}
 	}
-	if counter == len(str) {
+	if counter == StrLenAlp(str) {
 		return true
 	}
 	return false
@@ -21,4 +21,13 @@ func checkAlpNum(r rune) bool {
 		return true
 	}
 	return false
+}
+
+func StrLenAlp(str string) int {
+	var count int
+	strAsByte := []rune(str)
+	for index := range strAsByte {
+		count = index + 1
+	}
+	return count
 }
