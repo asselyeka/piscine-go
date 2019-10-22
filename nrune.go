@@ -1,11 +1,11 @@
 package piscine
 
 func NRune(s string, n int) rune {
-	strAsByte := []byte(s)
+	strAsByte := []rune(s)
 	var nrune rune
 	for index, letter := range strAsByte {
 		if index == n-1 {
-			nrune = rune(letter)
+			nrune = letter
 		}
 	}
 	return nrune
