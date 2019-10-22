@@ -1,6 +1,11 @@
 package piscine
 
 func FirstRune(s string) rune {
-	word := []byte(s)
-	return rune(word[0])
+	var fistRune rune
+	for index, letter := range s {
+		if index == 0 {
+			fistRune = letter
+		}
+	}
+	return fistRune
 }
