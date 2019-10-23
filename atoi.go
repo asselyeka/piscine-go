@@ -1,6 +1,6 @@
 package piscine
 
-func ByteToInt(num byte) int {
+func BToInt(num byte) int {
 	var runenum int
 	switch num {
 	case 48:
@@ -27,7 +27,7 @@ func ByteToInt(num byte) int {
 	return runenum
 }
 
-func StrLen(str string) int {
+func SLen(str string) int {
 	var count int
 	var a int
 	for index, word := range str {
@@ -40,14 +40,14 @@ func StrLen(str string) int {
 }
 
 func BasicAtoi2(s string, ind int) int {
-	lenth := StrLen(s)
+	lenth := SLen(s)
 	var num int = 0
 	str := []byte(s)
 	for i := ind; i < lenth; i++ {
 		if str[i] > 47 && str[i] < 58 {
 			for j := i; j < lenth; j++ {
 				if str[j] > 47 && str[j] < 58 {
-					num = num*10 + ByteToInt(s[j])
+					num = num*10 + BToInt(s[j])
 				} else {
 					return 0
 				}
@@ -64,7 +64,7 @@ func BasicAtoi2(s string, ind int) int {
 func Atoi(s string) int {
 	str := []byte(s)
 	var num int
-	if StrLen(s) >= 2 {
+	if SLen(s) >= 2 {
 
 		if str[0] == 43 {
 			num = BasicAtoi2(s, 1)
