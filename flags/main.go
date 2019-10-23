@@ -64,8 +64,10 @@ func main() {
 			}
 		}
 	}
-	if strForOrder != "" || strForInsert != "" {
-		str = SortStr(strForOrder + strForInsert)
+	if strForOrder != "" {
+		str += SortStr(strForOrder + strForInsert)
+	} else if strForInsert != "" {
+		str += strForInsert
 	}
 	for _, r := range str {
 		z01.PrintRune(r)
