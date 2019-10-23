@@ -10,8 +10,12 @@ func main() {
 	arguments := os.Args
 	sentance := ""
 	arg := []string(arguments[1:])
-	for _, word := range arg {
-		sentance += word + " "
+	for index, word := range arg {
+		if index == 0 {
+			sentance = word
+		} else {
+			sentance += " " + word
+		}
 	}
 	strAsRune := []rune(sentance)
 	vowels := ""
