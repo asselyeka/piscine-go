@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	help := "--insert\n\t-i\n\t\tThis flag inserts the string into the string passed as argument.\n--order\n\t-o\n\t\tThis flag will behave like a boolean, if it is called it will order the argument.\n"
+	help := "--insert\n  -i\n\t This flag inserts the string into the string passed as argument.\n--order\n  -o\n\t This flag will behave like a boolean, if it is called it will order the argument.\n"
 	arguments := os.Args
 	str := ""
 	strInsert := ""
@@ -45,7 +45,12 @@ func main() {
 				}
 			}
 			if strI == "-i=" {
-				strForInsert = string(flag[3:])
+				strTemp := flag
+				for index, letter := range strTemp {
+					if index > 2 {
+						strForInsert += string(letter)
+					}
+				}
 			}
 			if flag == "--order" || flag == "-o" {
 				strForOrder += string(arg[index+1])
@@ -59,7 +64,7 @@ func main() {
 			}
 		}
 	}
-	if strForOrder != "" {
+	if strForOrder != "" || strForInsert != "" {
 		str = SortStr(strForOrder + strForInsert)
 	}
 	for _, r := range str {
