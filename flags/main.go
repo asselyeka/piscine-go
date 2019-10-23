@@ -59,7 +59,7 @@ func main() {
 				str = help
 				break
 			}
-			if argIndex == 2 {
+			if flag != strForOrder {
 				str = flag
 			}
 		}
