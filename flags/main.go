@@ -13,6 +13,7 @@ func main() {
 	strForOrder := ""
 	strForInsert := ""
 	argIndex := 0
+	o := 0
 	for indx := range arguments {
 		argIndex = indx + 1
 	}
@@ -22,6 +23,7 @@ func main() {
 		arg := []string(arguments[1:])
 		for index, flag := range arg {
 			len := 0
+
 			for indx := range flag {
 				len = indx + 1
 			}
@@ -54,6 +56,7 @@ func main() {
 			}
 			if flag == "--order" || flag == "-o" && argIndex-1 > index+1 {
 				strForOrder = string(arg[index+1])
+				o = 1
 			}
 			if flag == "--help" || flag == "-h" {
 				str = help
@@ -70,7 +73,7 @@ func main() {
 			//z01.PrintRune('\n')
 		}
 	}
-	if strForOrder != "" {
+	if o == 1 {
 		str = SortStr(str + strForOrder + strForInsert)
 	} else if strForInsert != "" {
 		str += strForInsert
