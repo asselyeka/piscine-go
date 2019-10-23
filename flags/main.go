@@ -64,10 +64,10 @@ func main() {
 			} else {
 				str += string(flag)
 			}
-			for _, r := range str {
-				z01.PrintRune(r)
-			}
-			z01.PrintRune('\n')
+			//for _, r := range str {
+			//	z01.PrintRune(r)
+			//}
+			//z01.PrintRune('\n')
 		}
 	}
 	if strForOrder != "" {
