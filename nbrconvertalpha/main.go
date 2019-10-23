@@ -15,6 +15,7 @@ func main() {
 	}
 	if len > 0 {
 		if table[0] == "--upper" {
+			z01.PrintRune(' ')
 			tableUpp := []string(table[1:])
 			for _, num := range tableUpp {
 				if Atoi(num) >= 1 && Atoi(num) <= 26 {
@@ -32,8 +33,8 @@ func main() {
 				}
 			}
 		}
-		z01.PrintRune('\n')
 	}
+	z01.PrintRune('\n')
 }
 
 func BToInt(num byte) int {
