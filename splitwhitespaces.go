@@ -24,7 +24,6 @@ func SplitWhiteSpaces(str string) []string {
 	index := 0
 	if len > 0 && IsSeparator(strAsRune[0]) == false {
 		for i := 0; i < len; i++ {
-			word += string(strAsRune[i])
 			if IsSeparator(strAsRune[i]) == true {
 				if i+1 < len {
 					if IsSeparator(strAsRune[i+1]) == false {
@@ -34,6 +33,7 @@ func SplitWhiteSpaces(str string) []string {
 					}
 				}
 			}
+			word += string(strAsRune[i])
 		}
 		answer[size-1] = word
 	}
