@@ -32,8 +32,9 @@ func SplitWhiteSpaces(str string) []string {
 						word = ""
 					}
 				}
+			} else {
+				word += string(strAsRune[i])
 			}
-			word += string(strAsRune[i])
 		}
 		answer[size-1] = word
 	}
