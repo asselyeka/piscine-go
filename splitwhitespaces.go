@@ -7,12 +7,12 @@ func SplitWhiteSpaces(str string) []string {
 	for i := range strAsRune {
 		len = i + 1
 	}
-	if len > 0 && CheckAlpN(strAsRune[0]) == true {
+	if len > 0 && IsSeparator(strAsRune[0]) == false {
 		size++
 		for i := 0; i < len; i++ {
-			if strAsRune[i] == ' ' || strAsRune[i] == '\n' || strAsRune[i] == '\t' {
+			if IsSeparator(strAsRune[i]) == true {
 				if i+1 < len {
-					if CheckAlpN(strAsRune[i+1]) == true {
+					if IsSeparator(strAsRune[i+1]) == false {
 						size++
 					}
 				}
@@ -22,12 +22,12 @@ func SplitWhiteSpaces(str string) []string {
 	answer := make([]string, size)
 	word := ""
 	index := 0
-	if len > 0 && CheckAlpN(strAsRune[0]) == true {
+	if len > 0 && IsSeparator(strAsRune[0]) == false {
 		for i := 0; i < len; i++ {
 			word += string(strAsRune[i])
-			if strAsRune[i] == ' ' || strAsRune[i] == '\n' || strAsRune[i] == '\t' {
+			if IsSeparator(strAsRune[i]) == true {
 				if i+1 < len {
-					if CheckAlpN(strAsRune[i+1]) == true {
+					if IsSeparator(strAsRune[i+1]) == false {
 						answer[index] = word
 						index++
 						word = ""
@@ -40,10 +40,8 @@ func SplitWhiteSpaces(str string) []string {
 	return answer
 }
 
-func CheckAlpN(r rune) bool {
-	if r >= 'A' && r <= 'Z' ||
-		r >= 'a' && r <= 'z' ||
-		r >= '0' && r <= '9' {
+func IsSeparator(r rune) bool {
+	if r == ' ' || r == '\n' || r == '\t' {
 		return true
 	}
 	return false
